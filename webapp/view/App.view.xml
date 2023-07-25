@@ -1,0 +1,279 @@
+<mvc:View controllerName="it.deloitte.copilot.zshippingplan.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true"
+	xmlns="sap.m" xmlns:t="sap.ui.table">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<headerContent>
+						<Toolbar id="_IDEGen_toolbar0">
+							<MultiInput id="_IDEGen_multiinput0" tokenUpdate="checkPlant" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequested"
+								placeholder=" {i18n>lbl.Plants}" required="true" width="16rem"></MultiInput>
+							<MultiInput id="_IDEGen_multiinput1" width="37rem" showValueHelp="false" placeholder="{i18n>lbl.Materials}"/>
+							<ComboBox id="idAreaCB" enabled="false" placeholder="{i18n>lbl.MRPArea}" width="7rem" items="{MRPAreaModel>/ZZ1_MatchcodeMRPAREAforShi}">
+								<core:Item id="_IDEGen_combobox0" key="{MRPAreaModel>MRPArea}" text="{MRPAreaModel>MRPArea}"/>
+							</ComboBox>
+							<!--<DatePicker id="_IDEGen_DP1" displayFormat="dd/MM/yyyy" valueFormat="MM/dd/yyyy" placeholder="{i18n>lbl.DateRangeSelection}"-->
+							<!--	value="{appModel>/StartDateFilter}" change="onFilterDateChange"/>-->
+							<Button id="_IDEGen_button6" text="{i18n>lbl.Go}" icon="sap-icon://filter" tooltip="{i18n>lbl.Go}" press="onRun" type="Emphasized"/>
+							<Button id="_IDEGen_button4" text="" icon="sap-icon://excel-attachment" tooltip="{i18n>lbl.Download}" press="onExport" type="Success"/>
+						</Toolbar>
+					</headerContent>
+					<content>
+						<t:Table id="tableProducts" rows="{appModel>/rows}" selectionMode="None" visibleRowCountMode="Auto" ariaLabelledBy="title"
+							alternateRowColors="true" enableCellFilter="true" columnHeaderVisible="true" showNoData="true" enableColumnFreeze="false" width="100%"
+							fixedColumnCount="2">
+							<t:layoutData>
+								<FlexItemData id="_IDEGen_flexitemdata0" growFactor="1" baseSize="0%"/>
+							</t:layoutData>
+							<t:columns>
+								<t:Column id="_IDEGen_column114" hAlign="Begin" filterProperty="Material" sortProperty="Material" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label116" text="{i18n>lbl.Material}"/>
+									<t:template>
+										<Text id="_IDEGen_text108" text="{Material}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column76" hAlign="Begin" filterProperty="Plant" sortProperty="Plant" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label78" text="{i18n>lbl.Plant}"/>
+									<t:template>
+										<Text id="_IDEGen_text76" text="{Plant}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column118" hAlign="Begin" filterProperty="ProductDescriptionIT" sortProperty="ProductDescriptionIT" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label120" text="{i18n>lbl.ProductDescriptionIT}"/>
+									<t:template>
+										<Text id="_IDEGen_text112" text="{ProductDescriptionIT}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column12" hAlign="Begin" filterProperty="ProductDescriptionEN" sortProperty="ProductDescriptionEN" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label11" text="{i18n>lbl.ProductDescriptionEN}"/>
+									<t:template>
+										<Text id="_IDEGen_text5" text="{ProductDescriptionEN}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column11" hAlign="Begin" filterProperty="LegalDescriptionIT" sortProperty="LegalDescriptionIT" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label14" text="{i18n>lbl.LegalDescriptionIT}"/>
+									<t:template>
+										<Text id="_IDEGen_text12" text="{LegalDescriptionIT}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column10" hAlign="Begin" filterProperty="LegalDescriptionEN" sortProperty="LegalDescriptionEN" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label10" text="{i18n>lbl.LegalDescriptionEN}"/>
+									<t:template>
+										<Text id="_IDEGen_text10" text="{LegalDescriptionEN}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column0" hAlign="Begin" filterProperty="GLClass" sortProperty="GLClass" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label0" text="{i18n>lbl.GLClass}"/>
+									<t:template>
+										<Text id="_IDEGen_text0" text="{GLClass}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column1" hAlign="Begin" filterProperty="Vintage" sortProperty="Vintage" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label1" text="{i18n>lbl.Annata}"/>
+									<t:template>
+										<Text id="_IDEGen_text1" text="{Vintage}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column2" hAlign="Begin" filterProperty="PackSize" sortProperty="PackSize" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label2" text="{i18n>lbl.PackSize}"/>
+									<t:template>
+										<Text id="_IDEGen_text2" text="{PackSize}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column3" hAlign="Begin" filterProperty="Label" sortProperty="Label" resizable="true" autoResizable="true">
+									<Label id="_IDEGen_label3" text="{i18n>lbl.Label}"/>
+									<t:template>
+										<Text id="_IDEGen_text3" text="{Label}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column4" hAlign="Begin" filterProperty="QuantitaInGiacenza" sortProperty="QuantitaInGiacenza" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label4" text="{i18n>lbl.QuantitaInGiacenza}"/>
+									<t:template>
+										<Text id="_IDEGen_text4" text="{QuantitaInGiacenza}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column5" hAlign="Begin" filterProperty="QuantitaOnOrder1" sortProperty="QuantitaOnOrder1" resizable="true"
+									headerSpan="4" autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label25" text="{i18n>lbl.Week1}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label5" text="{i18n>lbl.QuantitaOnOrder1}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_111111" text="{QuantitaOnOrder1}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column6" hAlign="Begin" filterProperty="QuantitaOnWO1" sortProperty="QuantitaOnWO1" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label26" text="{i18n>lbl.Week1}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label6" text="{i18n>lbl.QuantitaOnWO1}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_222222" text="{QuantitaOnWO1}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column7" hAlign="Begin" filterProperty="QuantitaOnPO1" sortProperty="QuantitaOnPO1" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label27" text="{i18n>lbl.Week1}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label7" text="{i18n>lbl.QuantitaOnPO1}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_333333" text="{QuantitaOnPO1}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column8" hAlign="Begin" filterProperty="QuantitaOnAvailable1" sortProperty="QuantitaOnAvailabl1" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label28" text="{i18n>lbl.Week1}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label8" text="{i18n>lbl.QuantitaOnAvailable1}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_444444" text="{QuantitaOnAvailable1}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column13" hAlign="Begin" filterProperty="QuantitaOnOrder2" sortProperty="QuantitaOnOrder2" resizable="true"
+									headerSpan="4" autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label29" text="{i18n>lbl.Week2}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label12" text="{i18n>lbl.QuantitaOnOrder2}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text6" text="{QuantitaOnOrder2}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column14" hAlign="Begin" filterProperty="QuantitaOnWO2" sortProperty="QuantitaOnWO2" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label30" text="{i18n>lbl.Week2}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label13" text="{i18n>lbl.QuantitaOnWO2}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text7" text="{QuantitaOnWO2}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column15" hAlign="Begin" filterProperty="QuantitaOnPO2" sortProperty="QuantitaOnPO2" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label31" text="{i18n>lbl.Week2}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label15" text="{i18n>lbl.QuantitaOnPO2}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text8" text="{QuantitaOnPO2}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column16" hAlign="Begin" filterProperty="QuantitaOnAvailable2" sortProperty="QuantitaOnAvailable2" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label32" text="{i18n>lbl.Week2}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label16" text="{i18n>lbl.QuantitaOnAvailable2}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text11" text="{QuantitaOnAvailable2}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column17" hAlign="Begin" filterProperty="QuantitaOnOrder3" sortProperty="QuantitaOnOrder3" resizable="true"
+									headerSpan="4" autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label33" text="{i18n>lbl.Week3}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label17" text="{i18n>lbl.QuantitaOnOrder3}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text13" text="{QuantitaOnOrder3}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column18" hAlign="Begin" filterProperty="QuantitaOnWO3" sortProperty="QuantitaOnWO3" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label34" text="{i18n>lbl.Week3}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label18" text="{i18n>lbl.QuantitaOnWO3}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text14" text="{QuantitaOnWO3}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column19" hAlign="Begin" filterProperty="QuantitaOnPO3" sortProperty="QuantitaOnPO3" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label35" text="{i18n>lbl.Week3}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label19" text="{i18n>lbl.QuantitaOnPO3}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text15" text="{QuantitaOnPO3}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column20" hAlign="Begin" filterProperty="QuantitaOnAvailable3" sortProperty="QuantitaOnAvailable3" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label36" text="{i18n>lbl.Week3}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label20" text="{i18n>lbl.QuantitaOnAvailable3}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text16" text="{QuantitaOnAvailable3}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column21" hAlign="Begin" filterProperty="QuantitaOnOrder4" sortProperty="QuantitaOnOrder4" resizable="true"
+									headerSpan="4" autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label37" text="{i18n>lbl.Week4}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label21" text="{i18n>lbl.QuantitaOnOrder4}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text17" text="{QuantitaOnOrder4}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column22" hAlign="Begin" filterProperty="QuantitaOnWO4" sortProperty="QuantitaOnWO4" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label38" text="{i18n>lbl.Week4}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label22" text="{i18n>lbl.QuantitaOnWO4}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text18" text="{QuantitaOnWO4}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column23" hAlign="Begin" filterProperty="QuantitaOnPO4" sortProperty="QuantitaOnPO4" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label39" text="{i18n>lbl.Week4}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label23" text="{i18n>lbl.QuantitaOnPO4}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text19" text="{QuantitaOnPO4}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column24" hAlign="Begin" filterProperty="QuantitaOnAvailable4" sortProperty="QuantitaOnAvailable4" resizable="true"
+									autoResizable="true">
+									<t:multiLabels>
+										<Label id="_IDEGen_label40" text="{i18n>lbl.Week4}" textAlign="Center" width="100%"/>
+										<Label id="_IDEGen_label24" text="{i18n>lbl.QuantitaOnAvailable4}"/>
+									</t:multiLabels>
+									<t:template>
+										<Text id="_IDEGen_text20" text="{QuantitaOnAvailable4}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="_IDEGen_column9" hAlign="Begin" filterProperty="QuantitaOnHold" sortProperty="QuantitaOnHold" resizable="true"
+									autoResizable="true">
+									<Label id="_IDEGen_label9" text="{i18n>lbl.QuantitaOnHold}"/>
+									<t:template>
+										<Text id="_IDEGen_text9" text="{QuantitaOnHold}" wrapping="false"/>
+									</t:template>
+								</t:Column>
+							</t:columns>
+						</t:Table>
+					</content>
+					<footer>
+						<OverflowToolbar id="_IDEGen_overflowtoolbar1">
+							<ProgressIndicator id="_IDEGen_progressindicator0" width="20rem" displayValue="0%" state="Success" visible="false" displayOnly="true"/>
+						</OverflowToolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

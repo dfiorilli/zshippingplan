@@ -1,0 +1,275 @@
+{
+  "_version": "1.37.0",
+  "sap.app": {
+    "id": "it.deloitte.copilot.zshippingplan",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.2",
+      "toolsId": "ae9580ce-376b-47cd-8b59-1c03bfbe211f"
+    },
+    "dataSources": {
+      "API_CLFN_PRODUCT_SRV": {
+        "uri": "/sap/opu/odata/sap/API_CLFN_PRODUCT_SRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/metadata.xml"
+        }
+      },
+      "API_PRODUCT_SRV": {
+        "uri": "/sap/opu/odata/sap/API_PRODUCT_SRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/API_PRODUCT_SRV/metadata.xml"
+        }
+      },
+      "API_CLFN_CHARACTERISTIC_SRV": {
+        "uri": "/sap/opu/odata/sap/API_CLFN_CHARACTERISTIC_SRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/API_CLFN_CHARACTERISTIC_SRV/metadata.xml"
+        }
+      },
+      "API_MRP_MATERIALS_SRV_01": {
+        "uri": "/sap/opu/odata/sap/API_MRP_MATERIALS_SRV_01/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/API_MRP_MATERIALS_SRV_01/metadata.xml"
+        }
+      },
+      "API_MATERIAL_STOCK_SRV": {
+        "uri": "/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/API_MATERIAL_STOCK_SRV/metadata.xml"
+        }
+      },
+      "ZZ1_MATCHCODE_PLANT_EXTERN_CDS": {
+        "uri": "/sap/opu/odata/sap/ZZ1_MATCHCODE_PLANT_EXTERN_CDS/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/ZZ1_MATCHCODE_PLANT_EXTERN_CDS/metadata.xml"
+        }
+      },
+      "ZZ1_GETCHARBYNAME_CDS": {
+        "uri": "/sap/opu/odata/sap/ZZ1_GETCHARBYNAME_CDS/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/ZZ1_GETCHARBYNAME_CDS/metadata.xml"
+        }
+      },
+      "ZZ1_MATCHCODEMRPAREAFORSHI_CDS": {
+        "uri": "/sap/opu/odata/sap/ZZ1_MATCHCODEMRPAREAFORSHI_CDS/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/ZZ1_MATCHCODEMRPAREAFORSHI_CDS/metadata.xml"
+        }
+      },
+      "ZZ1_MRPAREAREPORTSHIPP_CDS": {
+        "uri": "/sap/opu/odata/sap/ZZ1_MRPAREAREPORTSHIPP_CDS/",
+        "type": "OData",
+        "settings": {
+          "localUri": "localService/ZZ1_MRPAREAREPORTSHIPP_CDS/metadata.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "rootView": {
+      "viewName": "it.deloitte.copilot.zshippingplan.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    },
+    "dependencies": {
+      "minUI5Version": "1.96.6",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "appModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {},
+        "preload": false
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "it.deloitte.copilot.zshippingplan.i18n.i18n"
+        }
+      },
+      "clfnProductModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "API_CLFN_PRODUCT_SRV",
+        "preload": true
+      },
+      "productModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "API_PRODUCT_SRV",
+        "preload": true
+      },
+      "clfnCharacteristicModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "API_CLFN_CHARACTERISTIC_SRV",
+        "preload": true
+      },
+      "mrpMaterialsModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "API_MRP_MATERIALS_SRV_01",
+        "preload": true
+      },
+      "materialStockModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "API_MATERIAL_STOCK_SRV",
+        "preload": true
+      },
+      "zz1MatchCodePlantExternModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "ZZ1_MATCHCODE_PLANT_EXTERN_CDS",
+        "preload": true
+      },
+      "characteristicModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "ZZ1_GETCHARBYNAME_CDS",
+        "preload": true
+      },
+      "MRPAreaModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "ZZ1_MATCHCODEMRPAREAFORSHI_CDS",
+        "preload": true
+      },
+      "StorageLocationModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        },
+        "dataSource": "ZZ1_MRPAREAREPORTSHIPP_CDS",
+        "preload": true
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "libs/xlsx/xlsx.js"
+        }
+      ]
+    },
+    "routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "it.deloitte.copilot.zshippingplan.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteApp",
+					"pattern": "RouteApp",
+					"target": [
+						"TargetApp"
+					]
+				}
+			],
+			"targets": {
+				"TargetApp": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "App",
+					"viewName": "App"
+				}
+			}
+		}
+  },
+  "sap.platform.hcp": {
+    "uri": "webapp",
+    "_version": "1.1.0"
+  }
+}

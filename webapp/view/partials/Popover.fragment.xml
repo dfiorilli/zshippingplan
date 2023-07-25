@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<MessagePopover id="_IDEGen_messagepopover0" placement="Top" items="{path: 'appModel>/messages'}" groupItems="true">
+		<MessageItem id="_IDEGen_messageitem0" type="{appModel>type}" groupName="{appModel>groupName}" title="{appModel>title}"
+			activeTitle="{appModel>active}" description="{appModel>description}" subtitle="{appModel>subtitle}" counter="{appModel>counter}"></MessageItem>
+	</MessagePopover>
+</core:FragmentDefinition>

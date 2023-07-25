@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.ui.comp.valuehelpdialog" xmlns:core="sap.ui.core">
+	<ValueHelpDialog id="_IDEGen_valuehelpdialog0" title="Product" ok=".onValueHelpOkPress" cancel=".onValueHelpCancelPress" afterClose=".onValueHelpAfterClose" key="Plant"
+		descriptionKey="PlantName"/>
+</core:FragmentDefinition>

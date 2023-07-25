@@ -1,0 +1,13 @@
+{
+	"cols": [
+		{
+			"label": "Plant",
+			"template": "Plant",
+			"width": "5rem"
+		},
+		{
+			"label": "Plant Name",
+			"template": "PlantName"
+		}
+	]
+}
